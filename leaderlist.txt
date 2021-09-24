@@ -1,11 +1,1 @@
-score1: 89
-score2: 78
-score3: 1
-score4: 4
-score5: 1
-orange juice
-pineapple juice
-orange juice
-pineapple juice
-orange juice
-pineapple juice
+{:score1=>89, :score2=>78, :bassy=>77, :score4=>4, :score5=>1, :score3=>1}Top score belongs to score1 the score is: 89
