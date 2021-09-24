@@ -1,18 +1,22 @@
+
 class Tally
   attr_reader :hash
   attr_accessor :container, :b
   def initialize
-    @b = []
-    @container = [score1: 89, score2: 78, score3: 1, score4: 4, score5: 1]
+    @b = []   
+    @file = File.open('leaderlist.txt', 'r')
+    @container = @file.read    
     @hash 
   end
   def check(hash)
     @hash = hash
+    p @container
     # this extracts the hash value
     hash.each do |_key, value|
       hs = value
       # this extracts container value
       @container.each do |cvalue|
+        p cvalue
         cvalue.each do |_key, value|
           # Checks if new value is greater than container value
           next unless hs.to_i > value
@@ -48,13 +52,14 @@ end
 
 game1 = GameTally.new
 game1.check(bassy: 77)
-game1.reciever
+
 
 file = File.open('leaderlist.txt', 'w')
-file.write(game1.b, game1.reciever)
+file.write(game1.b[0].to_h)
 file.close
 
 require 'csv'
 CSV.open('people.csv', 'a') do |csv|
   csv << [game1.hash.keys[0], game1.hash.values[0]]
 end 
+
