@@ -1,39 +1,72 @@
 class Tally
-    attr_reader :score
-    attr_accessor :container
+  attr_reader 
+  attr_accessor :container
 
+  def initialize
     
+    @container = [score1: 4, score2: 1, score3: 1, score4: 4, score5: 1]
+  end
 
-    def initialize(persons_score)
-        @score = persons_score
-        @container = [3,1,1,4,1]
-        
-    end 
-    def to_i
-        @container << @score
-    end 
-    def check(ps)
-        p ps
-        p @container
-        if  ps.to_i > @container[0][0]
-            @container << ps    
-        end
-        @container = @container.sort
-        p @container.length 
-        if @container.length > 5
-            @container.delete_at(0)
-        end
-        
 
-    
+
+  def check(hash)
+    # this extracts the hash value
+    hash.each do |_key, value|
+      hs = value
+      
+      # this extracts container value
+      @container.each do |cvalue|
+        cvalue.each do |_key, value|
+          # Checks if new value is greater than container value
+          next unless hs.to_i > value
+          @container = @container[0].merge(hash)
+          @container = @container.sort_by { |_key, value| value }.to_h
+          @container = @container.to_a.reverse.to_h
+
+          break
+        end
+      end
     end
-    # def organizse
-    #     container.each do |num|
+  end
+end
 
-    # end
+class GameTally < Tally
+    attr_reader :score1, :score2
+
+    @@score3 = []
+
     
-end 
+    def reciever(name1, name2)
 
-game1 =Tally.new(1)
-game1.check(2)
-p game1.container
+        
+        @@score3 << name1
+        @@score3 << name2
+        p @@score3
+        x = 0
+        sc = []
+        @@score3.each do |num|
+            num.each do |key, value|
+            if value > x
+                x = value
+                sc = num
+                
+            end   
+            end
+            
+        end
+        p "Top score belongs to #{sc.keys[0]} their score is: #{sc.values[0]}"
+        p x
+    end 
+    
+end
+
+game1 = GameTally.new
+game1.check(bassy: 2)
+p game1
+# game2 = Tally.new
+# game2.check(:bassy => 3)
+# p game2
+
+
+
+game1.reciever({:bassy => 29}, {:bassy2 => 38})
