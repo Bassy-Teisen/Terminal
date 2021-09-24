@@ -1,0 +1,11 @@
+score1: 89
+score2: 78
+score3: 1
+score4: 4
+score5: 1
+orange juice
+pineapple juice
+orange juice
+pineapple juice
+orange juice
+pineapple juice
