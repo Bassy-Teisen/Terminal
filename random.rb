@@ -4,8 +4,8 @@ class Tally
   attr_accessor :container, :b
   def initialize
     @b = []   
-    @file = File.open('leaderlist.txt', 'r')
-    @container = @file.read    
+    
+    @container = [:score1=>89, :score2=>78, :score4=>4, :score5=>1, :score3=>1]
     @hash 
   end
   def check(hash)
@@ -55,11 +55,14 @@ game1.check(bassy: 77)
 
 
 file = File.open('leaderlist.txt', 'w')
-file.write(game1.b[0].to_h)
+file.write(game1.b.to_h)
 file.close
 
 require 'csv'
 CSV.open('people.csv', 'a') do |csv|
   csv << [game1.hash.keys[0], game1.hash.values[0]]
 end 
-
+File.foreach('leaderlist.txt', sep=',') do |item|
+file = item
+p file
+end
