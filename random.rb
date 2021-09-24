@@ -3,7 +3,7 @@ class Tally
   attr_accessor :container
   def initialize
     @b = []
-    @container = [score1: 4, score2: 1, score3: 1, score4: 4, score5: 1]
+    @container = [score1: 89, score2: 78, score3: 1, score4: 4, score5: 1]
   end
   def check(hash)
     # this extracts the hash value
