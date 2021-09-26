@@ -5,8 +5,7 @@ class Tally
     def initialize
       @b = []
     #   data = File.read('scores.json')
-      @container = JSON.load_file('scores.json', symbolize_names: true)
-      
+      @container = JSON.load_file('scores.json', symbolize_names: true)      
       @hash 
     end
     def check(hash)
@@ -29,6 +28,7 @@ class Tally
         end
       end
     end
+
   end
   
   class GameTally < Tally
@@ -52,9 +52,10 @@ class Tally
   game1 = GameTally.new
   game1.check(bassy: 77)
   game1.reciever
-  
+   
 
   
+#   File.write('scores.json'. JSON.dump())
  
   
   require 'csv'
