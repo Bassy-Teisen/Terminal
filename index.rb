@@ -2,6 +2,7 @@
 
 require 'colorize'
 
+
 def check_answer?(right_answer, input)
   if right_answer == input.to_i
     puts 'correct'.cyan.bold
@@ -27,12 +28,13 @@ while exit_app == false
   if input == 'free'
     puts 'Please enter player name'
     player = gets.chomp.upcase
-
+    system 'clear'
     numbers.each do |num|
       num_sample = numbers.sample
-      puts "#{num} + #{num_sample} = "
+      print "#{num} + #{num_sample} = "
       correct_answer = num + num_sample
       user_input = gets.chomp
+      system 'clear'
       count += 1
 
       break if user_input == 'exit'
@@ -96,6 +98,7 @@ while exit_app == false
         else
           print "#{num} - #{num_sample} = "
           correct_answer = num - num_sample
+          
         end
         
         # getting answer
@@ -119,7 +122,6 @@ while exit_app == false
           system 'clear'
           puts "Time's up".red.bold
           puts "#{player}'s Total score: #{right_ans} correct and #{wrong_ans} wrong".bold.colorize(right_ans.positive? ? :blue : :red)
-          gets.chomp
           break
         end
       end
@@ -127,8 +129,22 @@ while exit_app == false
     end
 
     
-    puts "#{player}'s score: #{right_ans} correct and #{wrong_ans} wrong".bold.colorize(right_ans.positive? ? :blue : :red)
-    puts 'press enter to continue'
-    gets.chomp
+    
+ 
+    unless exit_app == true
+      puts 'Do you want to play again y/n?'
+      play_again = gets.chomp
+      count = 0
+      if play_again == 'y'
+        next
+      elsif play_again == 'n'
+        exit_app = true
+        break
+      else
+        puts "Incorrect input please enter 'y' or 'n'"
+        play_again = gets.chomp
+      end
+    end
   end
+
 end
