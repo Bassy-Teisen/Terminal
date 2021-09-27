@@ -21,7 +21,7 @@ exit_app = false
 while exit_app == false
   system 'clear'
   puts 'Type game type to play'
-  puts 'options: speed, free'
+  puts 'options: speed, free, bt'
   input = gets.chomp
   system 'clear'
   # start of Speed
@@ -143,8 +143,61 @@ while exit_app == false
       else
         puts "Incorrect input please enter 'y' or 'n'"
         play_again = gets.chomp
+        end
       end
+    
+  end
+ 
+  if input == 'bt'
+    
+    numbers = [1,2,3,4]
+    count = 0
+    puts 'Please enter player name'
+    player = gets.chomp.upcase
+    system 'clear'
+    temp_con = []
+    right_ans = 0
+    wrong_ans = 0
+    numbers.each do |num|
+      temp_con << numbers.sample + numbers.sample
+      var = 0
+      temp_con.each do |num_temp|
+      var = var + num_temp
+      end
+      num_sample = numbers.sample 
+      puts "#{num} + #{num_sample} + #{var} = "
+      num = num + num_sample + var
+      answer = gets.chomp
+      ans = answer.to_i
+      count += 1
+     
+     if answer == "exit"
+     puts "You stay classy San Diego!".cyan.bold
+     return
+
+     elsif num == ans
+     puts "correct".cyan.bold
+     right_ans += 1 
+     
+     else
+     puts "wrong".red.bold 
+     wrong_ans += 1
+     end
+     
+     unless numbers.length > count
+         if right_ans > 0 
+         puts "#{@player}'s score: #{right_ans} correct #{wrong_ans} wrong".cyan.bold
+         elsif wrong_ans >= 0
+          puts "#{@player}'s score: #{right_ans} correct #{wrong_ans} wrong".red.bold
+         else 
+         puts "no answers".red.bold
+         end 
+     end
     end
   end
+
+
+
+
 
 end
