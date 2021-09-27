@@ -3,6 +3,10 @@
 require 'colorize'
 
 
+def call_blah()
+  
+end 
+
 def check_answer?(right_answer, input)
   if right_answer == input.to_i
     puts 'correct'.cyan.bold
@@ -180,24 +184,28 @@ while exit_app == false
      right_ans += 1 
      
      else
-     puts "wrong".red.bold 
-     wrong_ans += 1
+     puts 'wrong'.red.bold
+     puts "#{player}'s Total score: #{right_ans} correct and #{wrong_ans} wrong".bold.colorize(right_ans.positive? ? :blue : :red)
+     break
      end
-     
-     unless numbers.length > count
-         if right_ans > 0 
-         puts "#{@player}'s score: #{right_ans} correct #{wrong_ans} wrong".cyan.bold
-         elsif wrong_ans >= 0
-          puts "#{@player}'s score: #{right_ans} correct #{wrong_ans} wrong".red.bold
-         else 
-         puts "no answers".red.bold
-         end 
-     end
-    end
+
+    end 
   end
-
-
-
-
-
+  
+  unless exit_app == true
+    
+    puts 'Do you want to play again y/n?'
+    play_again = gets.chomp
+    count = 0
+    if play_again == 'y'
+      next
+    elsif play_again == 'n'
+      exit_app = true
+      break
+    else
+      puts "Incorrect input please enter 'y' or 'n'"
+      play_again = gets.chomp
+      end
+    end
 end
+ 
