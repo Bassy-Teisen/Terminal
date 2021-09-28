@@ -210,6 +210,7 @@ def save_to_csv(filename, data)
   end
   # save to csv
 end
+
 new_data = calculator("freeplay.csv", x)
 save_to_csv("freeplay.csv", new_data)
 puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
