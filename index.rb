@@ -2,26 +2,38 @@
 
 require 'colorize'
 
+def total_score(player, right, wrong)
+  system 'clear'
+  puts "#{player}'s Total score: #{right} correct and #{wrong} wrong".bold.colorize(right.positive? ? :blue : :red)
+  
+end
+
 
 def play_again(ques_ans)
   if ques_ans == 'y'
     true 
   elsif ques_ans == 'n'
-    system 'clear'
-    puts "Good bye!".bold.colorize(:blue)
     false
   end
 end
+# Creates good bye message
+def good_bye()
+  system 'clear'
+  puts "Good bye!".bold.colorize(:blue)
+end
 
+# Asks do you want to play again
+def do__play_again()
+  puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+end   
 
-
-
+# Puts out right or wrong message
 def check_answer?(right_answer, input)
   if right_answer == input.to_i
-    puts 'correct'.cyan.bold
+    puts 'correct'.bold.colorize(:cyan)
     true
   else
-    puts 'wrong'.red.bold
+    puts 'wrong'.bold.colorize(:red)
     false
   end
 end
@@ -61,30 +73,22 @@ while exit_app == false
       end
 
       unless numbers.length > count
-
-        if right_ans.positive?
-          puts "#{player}'s score: #{right_ans} correct #{wrong_ans} wrong".cyan.bold
-        elsif wrong_ans >= 0
-          puts "#{player}'s score: #{right_ans} correct #{wrong_ans} wrong".red.bold
-        else
-          puts 'no answers'.red.bold
-        end
+        total_score(player, right_ans, wrong_ans)
       end
     end
 
     unless exit_app == true
-      puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+      do__play_again()
       play_again = gets.chomp
       count = 0
-      if play_again == 'y'
+      vars = play_again(play_again)
+      if vars == true
         next
-      elsif play_again == 'n'
+      elsif vars == false
         exit_app = true
-        system 'clear'
-        puts "Good bye!".bold.colorize(:blue)
-        break
+        good_bye()
       else
-        puts "Incorrect input please enter 'y' or 'n'"
+        puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
         play_again = gets.chomp
       end
     end
@@ -135,9 +139,9 @@ while exit_app == false
 
         # break if too slow
         if Time.now.to_i > start_time + num_seconds
-          system 'clear'
-          puts "Time's up".red.bold
-          puts "#{player}'s Total score: #{right_ans} correct and #{wrong_ans} wrong".bold.colorize(right_ans.positive? ? :blue : :red)
+
+          total_score(player, right_ans, wrong_ans)
+          puts "Time's up".bold.colorize(:red)
           break
         end
       end
@@ -148,22 +152,20 @@ while exit_app == false
     
  
     unless exit_app == true
-      puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+      do__play_again()
       play_again = gets.chomp
       count = 0
-      if play_again == 'y'
+      vars = play_again(play_again)
+      if vars == true
         next
-      elsif play_again == 'n'
+      elsif vars == false
         exit_app = true
-        system 'clear'
-        puts "Good bye!".bold.colorize(:blue)
-        break
+        good_bye()
       else
         puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
         play_again = gets.chomp
-        end
       end
-    
+    end
   end
  
   if input == 'bt'
@@ -191,45 +193,35 @@ while exit_app == false
      
      if answer == "exit"
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
-     puts "You stay classy San Diego!".cyan.bold
+     puts "You stay classy San Diego!".bold.colorize(:cyan)
      break
 
      elsif num == ans_int
-     puts "correct".cyan.bold
+     puts "correct".bold.colorize(:cyan)
      right_ans += 1 
      
      else
-     puts 'wrong'.red.bold
+     puts 'wrong'.bold.colorize(:red)
      puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
      break
      end
-
     end 
   end
   
   unless exit_app == true
-    
-
-
-
-
-
-    puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+    do__play_again()
     play_again = gets.chomp
     count = 0
-    
     vars = play_again(play_again)
     if vars == true
       next
     elsif vars == false
       exit_app = true
-      system 'clear'
-      puts "Good bye!".bold.colorize(:blue)
-      break
+      good_bye()
     else
       puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
       play_again = gets.chomp
-      end
     end
+  end
 end
  
