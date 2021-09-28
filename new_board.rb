@@ -7,21 +7,25 @@ require 'smarter_csv'
 data = SmarterCSV.process( "filename.csv" ) 
  
 p data
-foo = {:bassy => 10}
-p foo.values[0]
-def converter(input,new_result)
+foo = {:name=>"bassy", :score=>10, :game=>"game"}
+blah = foo.values[1]
+
+def converter(input,new_result, var)
     input.each do |hash|
-        hash.each do |key, val|
-            val = val.to_i
-            if val < new_result.values[0]
-            return new_result
+         val = hash[:score]
+         val = val.to_i
+         p val   
+         if val < new_result
+            return var
             else
                 next
             end     
         end
-    end
 end
-x = converter(data,foo)
+x = converter(data,blah,foo)
 
 data << x
+
 p data
+
+    
