@@ -2,12 +2,21 @@
 
 require 'colorize'
 
+def good_bye_mthod()
+  input = nil
+  until input == "y" or input == "n"
+    puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+    input = gets.chomp
+    puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
+  end
+  return input == "y" ? true : false
+end
+
 def total_score(player, right, wrong)
   system 'clear'
   puts "#{player}'s Total score: #{right} correct and #{wrong} wrong".bold.colorize(right.positive? ? :blue : :red)
   
 end
-
 
 def play_again(ques_ans)
   if ques_ans == 'y'
@@ -23,9 +32,6 @@ def good_bye()
 end
 
 # Asks do you want to play again
-def do__play_again()
-  puts 'Do you want to play again: y/n?'.bold.colorize(:green)
-end   
 
 # Puts out right or wrong message
 def check_answer?(right_answer, input)
@@ -64,7 +70,7 @@ while exit_app == false
 
       break if user_input == 'exit'
 
-# Answer checker
+      # Answer checker
       variable = check_answer?(correct_answer, user_input)
       if variable == true
         right_ans += 1
@@ -76,24 +82,8 @@ while exit_app == false
         total_score(player, right_ans, wrong_ans)
       end
     end
+    exit_app = good_bye_mthod()
 
-    unless exit_app == true
-      do__play_again()
-      play_again = gets.chomp
-      count = 0
-      vars = play_again(play_again)
-      if vars == true
-        next
-      elsif vars == false
-        exit_app = true
-        good_bye()
-      else
-        puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
-        play_again = gets.chomp
-      end
-    end
-  
-  
   elsif input == 'speed'
     puts 'Please enter player name'
     player = gets.chomp.upcase
@@ -129,7 +119,7 @@ while exit_app == false
         break if user_input == 'exit'
 
         
-# Answer checker        
+        # Answer checker        
         variable = check_answer?(correct_answer, user_input)
         if variable == true
           right_ans += 1
@@ -147,9 +137,6 @@ while exit_app == false
       end
       current_time = Time.now.to_i
     end
-
-    
-    
  
     unless exit_app == true
       do__play_again()
@@ -210,9 +197,9 @@ while exit_app == false
   
   unless exit_app == true
     do__play_again()
-    play_again = gets.chomp
+    input = gets.chomp
     count = 0
-    vars = play_again(play_again)
+    vars = 
     if vars == true
       next
     elsif vars == false
@@ -225,3 +212,5 @@ while exit_app == false
   end
 end
  
+system "clear"
+puts "goodbye"

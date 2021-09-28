@@ -3,29 +3,37 @@ require 'smarter_csv'
 
 
 
+def calculator(filename, new_game)
+    data = SmarterCSV.process(filename)
+    data.push(new_game)
 
-data = SmarterCSV.process( "filename.csv" ) 
- 
-p data
-foo = {:name=>"bassy", :score=>10, :game=>"game"}
-blah = foo.values[1]
+    data = data.sort_by { |hash| hash[:score] }.reverse
+    until data.length < 6
+        data.pop
+    end
+    return data
+end 
 
-def converter(input,new_result, var)
-    input.each do |hash|
-         val = hash[:score]
-         val = val.to_i
-         p val   
-         if val < new_result
-            return var
-            else
-                next
-            end     
+def save_to_csv(filename, data)
+    CSV.open(filename, "w") do |csv|
+        data.each do |thing|
+            csv << [thing[:name], thing[:score], thing[:game]]
         end
+    end
+    # save to csv
 end
-x = converter(data,blah,foo)
 
-data << x
+# #speed_round
+# new_data = calculator("speedround.csv", {:name=>"glen", :score=>10, :game=>"game"})
+# save_to_csv("speedround.csv", new_data)
+# puts "would you like to view leaderboard?"
+# input = gets.chomp
 
-p data
 
-    
+
+# #free play
+new_data = calculator("freeplay.csv", {:name=>"bassy", :score=>40, :game=>"game"})
+save_to_csv("freeplay.csv", new_data)
+
+# #brainteaser
+# calculator("brainteaser.csv", {:name=>"adam", :score=>92, :game=>"game"})
