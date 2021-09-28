@@ -28,7 +28,7 @@ while exit_app == false
   puts 'options: speed, free, bt'
   input = gets.chomp
   system 'clear'
-  # start of Speed
+  # start of free
   if input == 'free'
     puts 'Please enter player name'
     player = gets.chomp.upcase
@@ -63,7 +63,7 @@ while exit_app == false
     end
 
     unless exit_app == true
-      puts 'Do you want to play again?'
+      puts 'Do you want to play again: y/n?'.bold.colorize(:green)
       play_again = gets.chomp
       count = 0
       if play_again == 'y'
@@ -136,7 +136,7 @@ while exit_app == false
     
  
     unless exit_app == true
-      puts 'Do you want to play again y/n?'
+      puts 'Do you want to play again: y/n?'.bold.colorize(:green)
       play_again = gets.chomp
       count = 0
       if play_again == 'y'
@@ -145,7 +145,7 @@ while exit_app == false
         exit_app = true
         break
       else
-        puts "Incorrect input please enter 'y' or 'n'"
+        puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
         play_again = gets.chomp
         end
       end
@@ -156,7 +156,7 @@ while exit_app == false
     
     numbers = [1,2,3,4]
     count = 0
-    puts 'Please enter player name'
+    puts 'Please enter player name'.bold.colorize(:green)
     player = gets.chomp.upcase
     system 'clear'
     temp_con = []
@@ -169,23 +169,23 @@ while exit_app == false
       var = var + num_temp
       end
       num_sample = numbers.sample 
-      puts "#{num} + #{num_sample} + #{var} = "
+      print "#{num} + #{num_sample} + #{var} = "
       num = num + num_sample + var
       answer = gets.chomp
-      ans = answer.to_i
+      ans_int = answer.to_i
       count += 1
      
      if answer == "exit"
      puts "You stay classy San Diego!".cyan.bold
      return
 
-     elsif num == ans
+     elsif num == ans_int
      puts "correct".cyan.bold
      right_ans += 1 
      
      else
      puts 'wrong'.red.bold
-     puts "#{player}'s Total score: #{right_ans} correct and #{wrong_ans} wrong".bold.colorize(right_ans.positive? ? :blue : :red)
+     puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
      break
      end
 
@@ -194,7 +194,7 @@ while exit_app == false
   
   unless exit_app == true
     
-    puts 'Do you want to play again y/n?'
+    puts 'Do you want to play again: y/n?'.bold.colorize(:green)
     play_again = gets.chomp
     count = 0
     if play_again == 'y'
@@ -203,7 +203,7 @@ while exit_app == false
       exit_app = true
       break
     else
-      puts "Incorrect input please enter 'y' or 'n'"
+      puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
       play_again = gets.chomp
       end
     end
