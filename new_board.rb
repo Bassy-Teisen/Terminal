@@ -21,4 +21,7 @@ def converter(input,new_result)
         end
     end
 end
-p converter(data,foo)
+x = converter(data,foo)
+
+data << x
+p data

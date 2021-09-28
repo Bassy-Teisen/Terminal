@@ -1,19 +1,16 @@
 require "colorize"
 require 'json'
-require 'csv'
-
 class Tally
     attr_reader :hash
     attr_accessor :container, :b
     def initialize
       @b = []
-      @data = CSV.read('filename.csv')
-      @container = @data[0]
+    #   data = File.read('scores.json')
+      @container = ["score1":89, "score2":78, "score4":4, "score5":1, "score3":1]
       @hash 
     end
     def check(hash)
       @hash = hash
-      p @container
       # this extracts the hash value
       hash.each do |_key, value|
         hs = value
