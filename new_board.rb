@@ -1,23 +1,23 @@
 require 'csv'
 require 'smarter_csv'
-
-
+require_relative 'index.rb'
 
 def calculator(filename, new_game)
     data = SmarterCSV.process(filename)
     data.push(new_game)
-
     data = data.sort_by { |hash| hash[:score] }.reverse
     until data.length < 6
         data.pop
+        puts data
     end
     return data
 end 
 
 def save_to_csv(filename, data)
     CSV.open(filename, "w") do |csv|
+        csv << ['name','score','game']
         data.each do |thing|
-            csv << [thing[:name], thing[:score], thing[:game]]
+        csv << [thing[:name], thing[:score], thing[:game]]
         end
     end
     # save to csv
@@ -30,9 +30,8 @@ end
 # input = gets.chomp
 
 
-
 # #free play
-new_data = calculator("freeplay.csv", {:name=>"bassy", :score=>40, :game=>"game"})
+new_data = calculator("freeplay.csv", {:name=>"Bassy", :score=>97, :game=>"game"})
 save_to_csv("freeplay.csv", new_data)
 
 # #brainteaser

@@ -9,7 +9,7 @@ def good_bye_mthod()
     input = gets.chomp
     puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
   end
-  return input == "y" ? true : false
+  return input == "y" ? false : true
 end
 
 def total_score(player, right, wrong)
@@ -25,11 +25,8 @@ def play_again(ques_ans)
     false
   end
 end
-# Creates good bye message
-def good_bye()
-  system 'clear'
-  puts "Good bye!".bold.colorize(:blue)
-end
+
+
 
 # Asks do you want to play again
 
@@ -43,7 +40,7 @@ def check_answer?(right_answer, input)
     false
   end
 end
-
+x = {}
 count = 0
 right_ans = 0
 wrong_ans = 0
@@ -156,7 +153,7 @@ while exit_app == false
   end
  
   if input == 'bt'
-    
+    game = "Brain_teaser"
     numbers = [1,2,3,4]
     count = 0
     puts 'Please enter player name'.bold.colorize(:green)
@@ -190,27 +187,15 @@ while exit_app == false
      else
      puts 'wrong'.bold.colorize(:red)
      puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
+     p x = {:name=>player, :score=>right_ans, :game=>game}
      break
      end
     end 
   end
+  exit_app = good_bye_mthod()
+
   
-  unless exit_app == true
-    do__play_again()
-    input = gets.chomp
-    count = 0
-    vars = 
-    if vars == true
-      next
-    elsif vars == false
-      exit_app = true
-      good_bye()
-    else
-      puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
-      play_again = gets.chomp
-    end
-  end
 end
- 
-system "clear"
-puts "goodbye"
+p x
+# system "clear"
+puts "goodbye".bold.colorize(:blue)
