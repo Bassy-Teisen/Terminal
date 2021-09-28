@@ -72,7 +72,7 @@ while exit_app == false
         exit_app = true
         break
       else
-        puts "Incorrect input please enter 'yes' or 'no'"
+        puts "Incorrect input please enter 'y' or 'n'"
         play_again = gets.chomp
       end
     end
