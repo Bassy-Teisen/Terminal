@@ -3,6 +3,19 @@
 require 'colorize'
 
 
+def play_again(ques_ans)
+  if ques_ans == 'y'
+    true 
+  elsif ques_ans == 'n'
+    system 'clear'
+    puts "Good bye!".bold.colorize(:blue)
+    false
+  end
+end
+
+
+
+
 def check_answer?(right_answer, input)
   if right_answer == input.to_i
     puts 'correct'.cyan.bold
@@ -196,12 +209,19 @@ while exit_app == false
   
   unless exit_app == true
     
+
+
+
+
+
     puts 'Do you want to play again: y/n?'.bold.colorize(:green)
     play_again = gets.chomp
     count = 0
-    if play_again == 'y'
+    
+    vars = play_again(play_again)
+    if vars == true
       next
-    elsif play_again == 'n'
+    elsif vars == false
       exit_app = true
       system 'clear'
       puts "Good bye!".bold.colorize(:blue)
