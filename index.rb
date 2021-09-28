@@ -3,10 +3,6 @@
 require 'colorize'
 
 
-def call_blah()
-  
-end 
-
 def check_answer?(right_answer, input)
   if right_answer == input.to_i
     puts 'correct'.cyan.bold
@@ -43,6 +39,7 @@ while exit_app == false
 
       break if user_input == 'exit'
 
+# Answer checker
       variable = check_answer?(correct_answer, user_input)
       if variable == true
         right_ans += 1
@@ -52,7 +49,7 @@ while exit_app == false
 
       unless numbers.length > count
 
-        if right_ans > 0
+        if right_ans.positive?
           puts "#{player}'s score: #{right_ans} correct #{wrong_ans} wrong".cyan.bold
         elsif wrong_ans >= 0
           puts "#{player}'s score: #{right_ans} correct #{wrong_ans} wrong".red.bold
@@ -70,6 +67,8 @@ while exit_app == false
         next
       elsif play_again == 'n'
         exit_app = true
+        system 'clear'
+        puts "Good bye!".bold.colorize(:blue)
         break
       else
         puts "Incorrect input please enter 'y' or 'n'"
@@ -113,7 +112,7 @@ while exit_app == false
         break if user_input == 'exit'
 
         
-        
+# Answer checker        
         variable = check_answer?(correct_answer, user_input)
         if variable == true
           right_ans += 1
@@ -143,6 +142,8 @@ while exit_app == false
         next
       elsif play_again == 'n'
         exit_app = true
+        system 'clear'
+        puts "Good bye!".bold.colorize(:blue)
         break
       else
         puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
@@ -176,8 +177,9 @@ while exit_app == false
       count += 1
      
      if answer == "exit"
+      puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
      puts "You stay classy San Diego!".cyan.bold
-     return
+     break
 
      elsif num == ans_int
      puts "correct".cyan.bold
@@ -201,6 +203,8 @@ while exit_app == false
       next
     elsif play_again == 'n'
       exit_app = true
+      system 'clear'
+      puts "Good bye!".bold.colorize(:blue)
       break
     else
       puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
