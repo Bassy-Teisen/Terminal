@@ -1,13 +1,17 @@
 # frozen_string_literal: true
-
+# require_relative 'new_board.rb'
 require 'colorize'
+require 'csv'
+require 'smarter_csv'
 
 def good_bye_mthod()
   input = nil
+  puts 'Do you want to play again: y/n?'.bold.colorize(:green)
+  input = gets.chomp
+  system 'clear'
   until input == "y" or input == "n"
-    puts 'Do you want to play again: y/n?'.bold.colorize(:green)
-    input = gets.chomp
     puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
+    input = gets.chomp
   end
   return input == "y" ? false : true
 end
@@ -54,6 +58,7 @@ while exit_app == false
   system 'clear'
   # start of free
   if input == 'free'
+    game = 'free'
     puts 'Please enter player name'
     player = gets.chomp.upcase
     system 'clear'
@@ -78,8 +83,9 @@ while exit_app == false
       unless numbers.length > count
         total_score(player, right_ans, wrong_ans)
       end
+      x = {:name=>player, :score=>right_ans, :game=>game}
     end
-    exit_app = good_bye_mthod()
+  
 
   elsif input == 'speed'
     puts 'Please enter player name'
@@ -126,29 +132,13 @@ while exit_app == false
 
         # break if too slow
         if Time.now.to_i > start_time + num_seconds
-
           total_score(player, right_ans, wrong_ans)
           puts "Time's up".bold.colorize(:red)
+          x = {:name=>player, :score=>right_ans, :game=>game}
           break
         end
       end
       current_time = Time.now.to_i
-    end
- 
-    unless exit_app == true
-      do__play_again()
-      play_again = gets.chomp
-      count = 0
-      vars = play_again(play_again)
-      if vars == true
-        next
-      elsif vars == false
-        exit_app = true
-        good_bye()
-      else
-        puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
-        play_again = gets.chomp
-      end
     end
   end
  
@@ -179,23 +169,47 @@ while exit_app == false
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
      puts "You stay classy San Diego!".bold.colorize(:cyan)
      break
-
      elsif num == ans_int
      puts "correct".bold.colorize(:cyan)
-     right_ans += 1 
-     
+     right_ans += 1
      else
      puts 'wrong'.bold.colorize(:red)
      puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
-     p x = {:name=>player, :score=>right_ans, :game=>game}
+     x = {:name=>player, :score=>right_ans, :game=>game}
      break
      end
     end 
   end
   exit_app = good_bye_mthod()
-
-  
 end
-p x
+
 # system "clear"
 puts "goodbye".bold.colorize(:blue)
+
+
+def calculator(filename, new_game)
+  data = SmarterCSV.process(filename)
+  data.push(new_game)
+  data = data.sort_by { |hash| hash[:score] }.reverse
+  until data.length < 6
+      data.pop
+  end
+  return data
+end 
+
+def save_to_csv(filename, data)
+  CSV.open(filename, "w") do |csv|
+      csv << ['name','score','game']
+      data.each do |thing|
+      csv << [thing[:name], thing[:score], thing[:game]]
+      end
+  end
+  # save to csv
+end
+new_data = calculator("freeplay.csv", x)
+save_to_csv("freeplay.csv", new_data)
+puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
+puts "First Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
+puts "First Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
+puts "First Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+puts "First Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)

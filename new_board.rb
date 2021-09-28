@@ -1,27 +1,38 @@
 require 'csv'
 require 'smarter_csv'
-require_relative 'index.rb'
+# require_relative 'index.rb'
 
-def calculator(filename, new_game)
-    data = SmarterCSV.process(filename)
-    data.push(new_game)
-    data = data.sort_by { |hash| hash[:score] }.reverse
-    until data.length < 6
-        data.pop
-        puts data
-    end
-    return data
-end 
 
-def save_to_csv(filename, data)
-    CSV.open(filename, "w") do |csv|
-        csv << ['name','score','game']
-        data.each do |thing|
-        csv << [thing[:name], thing[:score], thing[:game]]
-        end
-    end
-    # save to csv
-end
+
+    
+    # def calculator(filename, new_game)
+    #     data = SmarterCSV.process(filename)
+    #     data.push(new_game)
+        
+    #     data = data.sort_by { |hash| hash[:score] }.reverse
+    #     until data.length < 6
+    #         data.pop
+    #     end
+    #     return data
+    # end 
+
+    # def save_to_csv(filename, data)
+    #     CSV.open(filename, "w") do |csv|
+    #         csv << ['name','score','game']
+    #         data.each do |thing|
+    #         csv << [thing[:name], thing[:score], thing[:game]]
+    #         end
+    #     end
+    #     # save to csv
+    # end
+    # new_data = calculator("freeplay.csv", x)
+    # save_to_csv("freeplay.csv", new_data)
+
+    
+
+
+
+
 
 # #speed_round
 # new_data = calculator("speedround.csv", {:name=>"glen", :score=>10, :game=>"game"})
@@ -31,8 +42,7 @@ end
 
 
 # #free play
-new_data = calculator("freeplay.csv", {:name=>"Bassy", :score=>97, :game=>"game"})
-save_to_csv("freeplay.csv", new_data)
+
 
 # #brainteaser
 # calculator("brainteaser.csv", {:name=>"adam", :score=>92, :game=>"game"})
