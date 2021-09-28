@@ -83,9 +83,11 @@ while exit_app == false
       unless numbers.length > count
         total_score(player, right_ans, wrong_ans)
       end
-      x = {:name=>player, :score=>right_ans, :game=>game}
+      
+      
     end
-  
+    x = {:name=>player, :score=>right_ans, :game=>game}
+    exit_app = good_bye_mthod()
 
   elsif input == 'speed'
     puts 'Please enter player name'
@@ -140,6 +142,7 @@ while exit_app == false
       end
       current_time = Time.now.to_i
     end
+    exit_app = good_bye_mthod()
   end
  
   if input == 'bt'
@@ -178,12 +181,13 @@ while exit_app == false
      x = {:name=>player, :score=>right_ans, :game=>game}
      break
      end
-    end 
+    end
+    exit_app = good_bye_mthod() 
   end
-  exit_app = good_bye_mthod()
+  
 end
 
-# system "clear"
+system "clear"
 puts "goodbye".bold.colorize(:blue)
 
 
@@ -209,7 +213,7 @@ end
 new_data = calculator("freeplay.csv", x)
 save_to_csv("freeplay.csv", new_data)
 puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
-puts "First Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
-puts "First Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
-puts "First Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
-puts "First Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+puts "Second Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
+puts "Third Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
+puts "Fourth Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+puts "Fith Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
