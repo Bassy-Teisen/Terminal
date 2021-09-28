@@ -66,9 +66,9 @@ while exit_app == false
       puts 'Do you want to play again?'
       play_again = gets.chomp
       count = 0
-      if play_again == 'yes'
+      if play_again == 'y'
         next
-      elsif play_again == 'no'
+      elsif play_again == 'n'
         exit_app = true
         break
       else
