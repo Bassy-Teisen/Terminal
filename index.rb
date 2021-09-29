@@ -4,15 +4,10 @@ require 'smarter_csv'
 require_relative 'name.rb'
 
 
-if ARGV.include?("--help")
-  help_output()
-end
-
 exit_app = false
-
-player = player_name() #true
+player = player_name() 
 player_scores = {}
-
+input = player_game()
 
 while exit_app == false
   count = 0
@@ -20,7 +15,7 @@ while exit_app == false
   wrong_ans = 0
   numbers = [1, 2, 3]
   # Prompt the player for game
-  input = player_game()
+  
   return if input == 'exit'
 
   # Start of free
@@ -106,10 +101,8 @@ while exit_app == false
 
   next unless input == 'bt'
 
-  temp_con = []
-  right_ans = 0
-  wrong_ans = 0
-  numbers.each do |num|
+    temp_con = []
+    numbers.each do |num|
     temp_con << numbers.sample + numbers.sample
     var_number = 0
     temp_con.each do |num_temp|
@@ -120,7 +113,7 @@ while exit_app == false
     num = num + num_sample + var_number
     answer = gets.chomp
     ans_int = answer.to_i
-    count += 1
+    # count += 1
 
     if answer == 'exit'
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
@@ -132,8 +125,8 @@ while exit_app == false
     else
       puts 'wrong'.bold.colorize(:red)
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
-  player = player_name
-      x[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
+  # player = player_name
+  player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
       break
     end
   end
@@ -157,9 +150,7 @@ def save_to_csv(filename, data)
     end
   end
 end
-
-p player_scores
-gets
+p player_scores[:bt]
 
 if player_scores[:bt]
   new_data = calculator('brain_teaser.csv', player_scores[:bt])

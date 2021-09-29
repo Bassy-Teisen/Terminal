@@ -16,7 +16,7 @@ def get_name
     system 'clear'
     help(player)
     if player.downcase == "exit"
-        puts "Good bye"
+        puts "Good bye".bold.colorize(:blue)
         exit
     end
     raise NoName if player.empty?
@@ -28,20 +28,20 @@ end
 def player_name
     begin
         return get_name
-    rescue NoName => err
-        puts err.message
+    rescue NoName => e
+        puts e.message
         retry
     end 
 end 
 
 def get_game
-    system 'clear'
     puts 'Games: "speed" "free" "bt"'.bold.colorize(:blue)
     puts 'Enter the game name to play!'.bold.colorize(:green)
     input = gets.strip.downcase
     system 'clear'
-    # help(input)
-    help_output() if input == "help"
+    help(input)
+    
+    help_output(input) if input == "help"
     raise NoName if input.empty?
     puts "Game #{input}".bold.colorize(:blue)
     input
@@ -49,15 +49,26 @@ end
 
 def player_game
     begin
-        input = get_game
-        input
-        
-    rescue NoName => err
-        puts err.message
+        return get_game
+    rescue NoName => e
+        puts e.message
         retry
     end 
 end 
 
+def help(input)
+    if input.downcase == "help"
+        help_output()
+    end
+end
+
+def help_output
+    puts 'If you wish to exit type: "exit"'
+    # puts 'To view score end game'
+    puts "press enter to continue"
+    reply = gets.chomp
+    exit if reply == "exit"
+end
 
 def play_again(ques_ans)
     if ques_ans == 'y'
@@ -109,16 +120,24 @@ def print_place(place, player_name, score)
     puts "#{place} Place goes to: #{player_name}! with a score of: #{score}".bold.colorize(:blue)
 end
 
-def help(input)
-    if input.downcase == "help"
-        help_output()
-    end
-end
 
-def help_output
-    puts 'If you wish to exit type: "exit"'
-    # puts 'To view score end game'
-    puts "press enter to continue"
-    reply = gets.chomp
-    exit if reply == "exit"
+
+
+
+if ARGV.include?("--help")
+    help_output()
+      if ARGV.include?("--bt")
+        puts 'Brain Teaser'.bold.colorize(:blue)
+        p SmarterCSV.process('brain_teaser.csv')
+        exit
+      elsif ARGV.include?("--speed")
+        puts 'Speed'.bold.colorize(:blue)
+        p SmarterCSV.process('speed.csv')
+        exit 
+      elsif ARGV.include?("--free")
+        puts 'Free'.bold.colorize(:blue)
+        p SmarterCSV.process('freeplay.csv')
+        exit  
+      end
+       
 end
