@@ -2,6 +2,14 @@ require 'colorize'
 require 'csv'
 require 'smarter_csv'
 require_relative 'name.rb'
+require 'tty-font'
+require 'ordinal'
+require 'rspec'
+
+
+font = TTY::Font.new(:doom)
+system 'clear'
+puts font.write("Maths", letter_spacing: 1).colorize(:cyan)
 
 
 exit_app = false

@@ -1,5 +1,5 @@
 require 'colorize'
-
+require 'ordinal'
 class NoName < StandardError
     def message
         "No Name Entered! ".bold.colorize(:red)
@@ -107,13 +107,13 @@ def check_answer?(right_answer, input)
       false
     end
 end
-
+# Use gem ordinal
 def leader_board(new_data)
-    print_place("Top score", new_data[0][:name], new_data[0][:score])
-    print_place("Second", new_data[1][:name], new_data[1][:score])
-    print_place("Third", new_data[2][:name], new_data[2][:score])
-    print_place("Fourth", new_data[3][:name], new_data[3][:score])
-    print_place("Fifth", new_data[4][:name], new_data[4][:score])
+    print_place(1.to_ordinal, new_data[0][:name], new_data[0][:score])
+    print_place(2.to_ordinal, new_data[1][:name], new_data[1][:score])
+    print_place(3.to_ordinal, new_data[2][:name], new_data[2][:score])
+    print_place(4.to_ordinal, new_data[3][:name], new_data[3][:score])
+    print_place(5.to_ordinal, new_data[4][:name], new_data[4][:score])
 end
 
 def print_place(place, player_name, score)
