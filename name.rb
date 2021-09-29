@@ -6,16 +6,18 @@ class NoName < StandardError
     end 
 end 
 
+def gets
+    return STDIN.gets
+end
+
 def get_name
     puts 'Please enter player name!'.bold.colorize(:green)
     player = gets.strip.upcase
     system 'clear'
+    help(player)
     if player.downcase == "exit"
         puts "Good bye"
-        return exit_app == true
-        
-        
-        
+        exit
     end
     raise NoName if player.empty?
     puts "Welcome #{player}".bold.colorize(:blue)
@@ -25,8 +27,7 @@ end
 
 def player_name
     begin
-        player = get_name
-        player
+        return get_name
     rescue NoName => err
         puts err.message
         retry
@@ -36,10 +37,11 @@ end
 def get_game
     system 'clear'
     puts 'Games: "speed" "free" "bt"'.bold.colorize(:blue)
-    puts 'Enter the game name to player!'.bold.colorize(:green)
+    puts 'Enter the game name to play!'.bold.colorize(:green)
     input = gets.strip.downcase
     system 'clear'
-    
+    # help(input)
+    help_output() if input == "help"
     raise NoName if input.empty?
     puts "Game #{input}".bold.colorize(:blue)
     input
@@ -96,9 +98,27 @@ def check_answer?(right_answer, input)
 end
 
 def leader_board(new_data)
-puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
-puts "Second Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
-puts "Third Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
-puts "Fourth Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
-puts "Fith Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+    print_place("First", new_data[0][:name], new_data[0][:score])
+    print_place("Second", new_data[1][:name], new_data[1][:score])
+    print_place("Third", new_data[2][:name], new_data[2][:score])
+    print_place("Fourth", new_data[3][:name], new_data[3][:score])
+    print_place("Fifth", new_data[4][:name], new_data[4][:score])
+end
+
+def print_place(place, player_name, score)
+    puts "#{place} Place goes to: #{player_name}! with a score of: #{score}".bold.colorize(:blue)
+end
+
+def help(input)
+    if input.downcase == "help"
+        help_output()
+    end
+end
+
+def help_output
+    puts 'If you wish to exit type: "exit"'
+    # puts 'To view score end game'
+    puts "press enter to continue"
+    reply = gets.chomp
+    exit if reply == "exit"
 end
