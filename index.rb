@@ -13,7 +13,7 @@ while exit_app == false
   count = 0
   right_ans = 0
   wrong_ans = 0
-  numbers = [1, 2, 3]
+  numbers = [1, 2, 3, 4, 5]
   # Prompt the player for game
   
   return if input == 'exit'
@@ -89,7 +89,7 @@ while exit_app == false
 
           total_score(player, right_ans, wrong_ans)
           puts "Time's up".bold.colorize(:red)
-
+          break
         end
         player_scores[:speed] = { name: player, score: right_ans, game: "speed" }
       end
@@ -102,7 +102,7 @@ while exit_app == false
   next unless input == 'bt'
 
     temp_con = []
-    numbers.each do |num|
+  numbers.each do |num|
     temp_con << numbers.sample + numbers.sample
     var_number = 0
     temp_con.each do |num_temp|
@@ -126,9 +126,10 @@ while exit_app == false
       puts 'wrong'.bold.colorize(:red)
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
   # player = player_name
-  player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
+      player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
       break
     end
+    player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
   end
   exit_app = good_bye_mthod
 
@@ -172,5 +173,5 @@ if player_scores[:speed]
      save_to_csv('speed.csv', new_data)
      system 'clear'
      puts 'Speed'.bold.colorize(:blue)
-     leader_board(new_data)
+     leader_board(new_data,)
 end

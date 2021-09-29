@@ -109,7 +109,7 @@ def check_answer?(right_answer, input)
 end
 
 def leader_board(new_data)
-    print_place("First", new_data[0][:name], new_data[0][:score])
+    print_place("Top score", new_data[0][:name], new_data[0][:score])
     print_place("Second", new_data[1][:name], new_data[1][:score])
     print_place("Third", new_data[2][:name], new_data[2][:score])
     print_place("Fourth", new_data[3][:name], new_data[3][:score])
