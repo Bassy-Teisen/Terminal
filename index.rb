@@ -22,7 +22,7 @@ while exit_app == false
   numbers = [1, 2, 3]
   # Prompt the player for game
   input = player_game
-  
+  return if input == 'exit'
   
   
   # Start of free
