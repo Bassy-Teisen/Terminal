@@ -54,7 +54,7 @@ while exit_app == false
   system 'clear'
   puts 'Type game type to play'
   puts 'options: speed, free, bt'
-  input = gets.chomp
+  input = gets.strip
   system 'clear'
   # start of free
   if input == 'free'
