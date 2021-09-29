@@ -7,12 +7,6 @@ require_relative 'name.rb'
 
 
 
-
-
-
-
-
-
 exit_app = false
 while exit_app == false
   x = {}
@@ -25,10 +19,7 @@ while exit_app == false
   return if input == 'exit'
   
   
-  
-  
-  
-  
+
   # Start of free
   if input == 'free'
     game = 'free'
@@ -65,7 +56,7 @@ while exit_app == false
   
   
   elsif input == 'speed'
-    
+    game = 'speed'
     player = player_name
     num_seconds = 3
     start_time = Time.now.to_i
@@ -105,12 +96,13 @@ while exit_app == false
 
         total_score(player, right_ans, wrong_ans)
         puts "Time's up".bold.colorize(:red)
-        x = {:name=>player, :score=>right_ans, :game=>game}
+        
         end
-
+        x = {:name=>player, :score=>right_ans, :game=>game}
       end
       current_time = Time.now.to_i
     end
+    
     exit_app = good_bye_mthod()
   end
  
@@ -157,8 +149,7 @@ while exit_app == false
   
 end
 
-system "clear"
-puts "goodbye".bold.colorize(:blue)
+
 
 
 def calculator(filename, new_game)
@@ -179,11 +170,25 @@ def save_to_csv(filename, data)
       end
   end
 end
+p x[:game]
+if x[:game] == "Brain_Teaser" 
+  new_data = calculator("brain_teaser.csv", x)
+  p = save_to_csv("brain_teaser.csv", new_data)
+  system "clear"
+  puts "Brain Teaser".bold.colorize(:blue)
+  leader_board(new_data)
 
-new_data = calculator("freeplay.csv", x)
-save_to_csv("freeplay.csv", new_data)
-puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
-puts "Second Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
-puts "Third Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
-puts "Fourth Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
-puts "Fith Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+elsif x[:game] == "free" 
+  new_data = calculator("freeplay.csv", x)
+  save_to_csv("freeplay.csv", new_data)
+  system "clear"
+  puts "Free".bold.colorize(:blue)
+  leader_board(new_data)
+
+else x[:game] == "speed" 
+  new_data = calculator("speed.csv", x)
+  save_to_csv("speed.csv", new_data)
+  system "clear"
+  puts "Speed".bold.colorize(:blue)
+  leader_board(new_data)
+end 

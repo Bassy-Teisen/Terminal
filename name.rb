@@ -95,5 +95,10 @@ def check_answer?(right_answer, input)
     end
 end
 
-
-
+def leader_board(new_data)
+puts "First Place goes to: #{new_data[0][:name]}! with a score of: #{new_data[0][:score]}".bold.colorize(:blue)
+puts "Second Place goes to: #{new_data[1][:name]}! with a score of: #{new_data[1][:score]}".bold.colorize(:blue)
+puts "Third Place goes to: #{new_data[2][:name]}! with a score of: #{new_data[2][:score]}".bold.colorize(:blue)
+puts "Fourth Place goes to: #{new_data[3][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+puts "Fith Place goes to: #{new_data[4][:name]}! with a score of: #{new_data[3][:score]}".bold.colorize(:blue)
+end
