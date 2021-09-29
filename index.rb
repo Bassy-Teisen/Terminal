@@ -3,6 +3,7 @@
 require 'colorize'
 require 'csv'
 require 'smarter_csv'
+require_relative 'name.rb'
 
 def good_bye_mthod()
   input = nil
@@ -16,9 +17,9 @@ def good_bye_mthod()
   return input == "y" ? false : true
 end
 
-def total_score(player, right, wrong)
+def total_score(play, right, wrong)
   system 'clear'
-  puts "#{player}'s Total score: #{right} correct and #{wrong} wrong".bold.colorize(right.positive? ? :blue : :red)
+  puts "#{play}'s Total score: #{right} correct and #{wrong} wrong".bold.colorize(right.positive? ? :blue : :red)
   
 end
 
@@ -59,9 +60,7 @@ while exit_app == false
   # start of free
   if input == 'free'
     game = 'free'
-    puts 'Please enter player name'
-    player = gets.chomp.upcase
-    system 'clear'
+    player = check
     numbers.each do |num|
       num_sample = numbers.sample
       print "#{num} + #{num_sample} = "
@@ -82,6 +81,7 @@ while exit_app == false
 
       unless numbers.length > count
         total_score(player, right_ans, wrong_ans)
+        count = 0
       end
       
       
@@ -145,13 +145,15 @@ while exit_app == false
     exit_app = good_bye_mthod()
   end
  
+
+
+
+
+  
   if input == 'bt'
     game = "Brain_teaser"
     numbers = [1,2,3,4]
-    count = 0
-    puts 'Please enter player name'.bold.colorize(:green)
-    player = gets.chomp.upcase
-    system 'clear'
+    player = check
     temp_con = []
     right_ans = 0
     wrong_ans = 0
