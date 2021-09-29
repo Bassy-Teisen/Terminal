@@ -2,24 +2,23 @@ require 'colorize'
 
 class NoName < StandardError
     def message
-        "Name it right "
+        "No Name Entered! ".bold.colorize(:red)
     end 
 end 
 
-
+def get_name
+    puts 'Please enter player name!'.bold.colorize(:green)
+    player = gets.strip.upcase
+    system 'clear'
+    puts "Welcome #{player}".bold.colorize(:blue)
+    raise NoName if player.empty?
+    player
+end 
 
 
 def check
-    def get_name
-        system 'clear'
-        puts 'Please enter player name'.bold.colorize(:green)
-        player = gets.strip.upcase
-        raise NoName if player.empty?
-        player
-    end 
-    begin 
+    begin
         player = get_name
-        puts "the name is #{player}"
         player
     rescue NoName => err
         puts err.message
