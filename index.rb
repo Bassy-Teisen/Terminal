@@ -5,62 +5,30 @@ require 'csv'
 require 'smarter_csv'
 require_relative 'name.rb'
 
-def good_bye_mthod()
-  input = nil
-  puts 'Do you want to play again: y/n?'.bold.colorize(:green)
-  input = gets.chomp
-  system 'clear'
-  until input == "y" or input == "n"
-    puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
-    input = gets.chomp
-  end
-  return input == "y" ? false : true
-end
-
-def total_score(play, right, wrong)
-  system 'clear'
-  puts "#{play}'s Total score: #{right} correct and #{wrong} wrong".bold.colorize(right.positive? ? :blue : :red)
-  
-end
-
-def play_again(ques_ans)
-  if ques_ans == 'y'
-    true 
-  elsif ques_ans == 'n'
-    false
-  end
-end
 
 
 
-# Asks do you want to play again
 
-# Puts out right or wrong message
-def check_answer?(right_answer, input)
-  if right_answer == input.to_i
-    puts 'correct'.bold.colorize(:cyan)
-    true
-  else
-    puts 'wrong'.bold.colorize(:red)
-    false
-  end
-end
-x = {}
-count = 0
-right_ans = 0
-wrong_ans = 0
-numbers = [1, 2, 3]
+
+
+
+
 exit_app = false
 while exit_app == false
-  system 'clear'
-  puts 'Type game type to play'
-  puts 'options: speed, free, bt'
-  input = gets.strip
-  system 'clear'
-  # start of free
+  x = {}
+  count = 0
+  right_ans = 0
+  wrong_ans = 0
+  numbers = [1, 2, 3]
+  # Prompt the player for game
+  input = player_game
+  
+  
+  
+  # Start of free
   if input == 'free'
     game = 'free'
-    player = check
+    player = player_name
     numbers.each do |num|
       num_sample = numbers.sample
       print "#{num} + #{num_sample} = "
@@ -89,23 +57,25 @@ while exit_app == false
     x = {:name=>player, :score=>right_ans, :game=>game}
     exit_app = good_bye_mthod()
 
+  
+  
+  
+  
+  
   elsif input == 'speed'
-    puts 'Please enter player name'
-    player = gets.chomp.upcase
-    system 'clear'
-    right_ans = 0
+    
+    player = player_name
     num_seconds = 3
     start_time = Time.now.to_i
     current_time = Time.now.to_i
-    wrong_ans = 0
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+    
     
     while current_time < start_time + num_seconds
       # p "Speed Maths 30 seconds"
       # input = gets.chomp
 
       numbers.each do |num|
-        num_sample = numbers.sample
+      num_sample = numbers.sample
         
         if count < 6 || count > 10
           print "#{num} + #{num_sample} = "
@@ -134,11 +104,14 @@ while exit_app == false
 
         # break if too slow
         if Time.now.to_i > start_time + num_seconds
-          total_score(player, right_ans, wrong_ans)
-          puts "Time's up".bold.colorize(:red)
-          x = {:name=>player, :score=>right_ans, :game=>game}
-          break
+        
+        total_score(player, right_ans, wrong_ans)
+        puts "Time's up".bold.colorize(:red)
+        x = {:name=>player, :score=>right_ans, :game=>game}  
+        else  
+        
         end
+        
       end
       current_time = Time.now.to_i
     end
@@ -152,8 +125,7 @@ while exit_app == false
   
   if input == 'bt'
     game = "Brain_teaser"
-    numbers = [1,2,3,4]
-    player = check
+    player = player_name
     temp_con = []
     right_ans = 0
     wrong_ans = 0
