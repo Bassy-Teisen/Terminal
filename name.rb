@@ -95,3 +95,5 @@ def check_answer?(right_answer, input)
     end
 end
 
+
+

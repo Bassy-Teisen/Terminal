@@ -25,6 +25,10 @@ while exit_app == false
   return if input == 'exit'
   
   
+  
+  
+  
+  
   # Start of free
   if input == 'free'
     game = 'free'
@@ -36,12 +40,11 @@ while exit_app == false
       user_input = gets.chomp
       system 'clear'
       count += 1
-
       break if user_input == 'exit'
 
       # Answer checker
-      variable = check_answer?(correct_answer, user_input)
-      if variable == true
+      answer = check_answer?(correct_answer, user_input)
+      if answer == true
         right_ans += 1
       else
         wrong_ans += 1
@@ -51,7 +54,6 @@ while exit_app == false
         total_score(player, right_ans, wrong_ans)
         count = 0
       end
-      
       
     end
     x = {:name=>player, :score=>right_ans, :game=>game}
@@ -68,11 +70,8 @@ while exit_app == false
     num_seconds = 3
     start_time = Time.now.to_i
     current_time = Time.now.to_i
-    
-    
+
     while current_time < start_time + num_seconds
-      # p "Speed Maths 30 seconds"
-      # input = gets.chomp
 
       numbers.each do |num|
       num_sample = numbers.sample
@@ -83,9 +82,8 @@ while exit_app == false
         else
           print "#{num} - #{num_sample} = "
           correct_answer = num - num_sample
-          
         end
-        
+
         # getting answer
         user_input = gets.chomp
         system 'clear'
@@ -93,10 +91,10 @@ while exit_app == false
         # exit if user quits
         break if user_input == 'exit'
 
-        
-        # Answer checker        
-        variable = check_answer?(correct_answer, user_input)
-        if variable == true
+
+        # Answer checker
+        answer = check_answer?(correct_answer, user_input)
+        if answer == true
           right_ans += 1
         else
           wrong_ans += 1
@@ -104,14 +102,12 @@ while exit_app == false
 
         # break if too slow
         if Time.now.to_i > start_time + num_seconds
-        
+
         total_score(player, right_ans, wrong_ans)
         puts "Time's up".bold.colorize(:red)
-        x = {:name=>player, :score=>right_ans, :game=>game}  
-        else  
-        
+        x = {:name=>player, :score=>right_ans, :game=>game}
         end
-        
+
       end
       current_time = Time.now.to_i
     end
@@ -124,20 +120,20 @@ while exit_app == false
 
   
   if input == 'bt'
-    game = "Brain_teaser"
+    game = "Brain_Teaser"
     player = player_name
     temp_con = []
     right_ans = 0
     wrong_ans = 0
     numbers.each do |num|
       temp_con << numbers.sample + numbers.sample
-      var = 0
+      var_number = 0
       temp_con.each do |num_temp|
-      var = var + num_temp
+        var_number = var_number + num_temp
       end
       num_sample = numbers.sample 
-      print "#{num} + #{num_sample} + #{var} = "
-      num = num + num_sample + var
+      print "#{num} + #{num_sample} + #{var_number} = "
+      num = num + num_sample + var_number
       answer = gets.chomp
       ans_int = answer.to_i
       count += 1
@@ -182,7 +178,6 @@ def save_to_csv(filename, data)
       csv << [thing[:name], thing[:score], thing[:game]]
       end
   end
-  # save to csv
 end
 
 new_data = calculator("freeplay.csv", x)
