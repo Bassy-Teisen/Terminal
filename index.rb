@@ -5,6 +5,7 @@ require_relative 'name.rb'
 require 'tty-font'
 require 'ordinal'
 require 'rspec'
+require 'rouge' # Need to check if i Actually need this
 
 
 font = TTY::Font.new(:doom)
@@ -13,9 +14,9 @@ puts font.write("Maths", letter_spacing: 1).colorize(:cyan)
 
 
 exit_app = false
-player = player_name() 
+player = name_receiver(get_name) 
 player_scores = {}
-input = player_game()
+input = name_receiver(get_game)
 
 while exit_app == false
   count = 0

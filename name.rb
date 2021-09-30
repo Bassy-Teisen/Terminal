@@ -25,9 +25,9 @@ def get_name
 end 
 
 
-def player_name
+def name_receiver(name)
     begin
-        return get_name
+        return name
     rescue NoName => e
         puts e.message
         retry
@@ -47,14 +47,14 @@ def get_game
     input
 end 
 
-def player_game
-    begin
-        return get_game
-    rescue NoName => e
-        puts e.message
-        retry
-    end 
-end 
+# def player_game
+#     begin
+#         return get_game
+#     rescue NoName => e
+#         puts e.message
+#         retry
+#     end 
+# end 
 
 def help(input)
     if input.downcase == "help"
