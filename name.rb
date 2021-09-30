@@ -90,7 +90,7 @@ def total_score(play, right, wrong)
 
 end
 
-def good_bye_mthod()
+def good_bye()
     input = nil
     puts 'Do you want to play again: y/n?'.bold.colorize(:green)
     input = gets.chomp

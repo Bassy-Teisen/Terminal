@@ -10,7 +10,7 @@ require 'rouge' # Need to check if i Actually need this
 
 font = TTY::Font.new(:doom)
 system 'clear'
-puts font.write("Maths", letter_spacing: 1).colorize(:cyan)
+puts font.write("Qucik Maths", letter_spacing: 1).colorize(:cyan)
 
 
 exit_app = false
@@ -59,13 +59,12 @@ while exit_app == false
       player_scores[:free] = { name: player, score: right_ans, game: "free" }
     end
 
-    exit_app = good_bye_mthod
+    exit_app = good_bye()
 
   elsif input == 'speed'
-    num_seconds = 3
+    num_seconds = 30
     start_time = Time.now.to_i
     current_time = Time.now.to_i
-
     while current_time < start_time + num_seconds
 
       numbers.each do |num|
@@ -105,7 +104,7 @@ while exit_app == false
       current_time = Time.now.to_i
     end
 
-    exit_app = good_bye_mthod
+    exit_app = good_bye()
   end
 
   next unless input == 'bt'
@@ -140,7 +139,7 @@ while exit_app == false
     end
     player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
   end
-  exit_app = good_bye_mthod
+  exit_app = good_bye()
 
 end
 
