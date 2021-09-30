@@ -5,6 +5,11 @@ class NoName < StandardError
         "No Name Entered! ".bold.colorize(:red)
     end 
 end 
+class NoGame < StandardError
+    def message
+        "No Name Entered! ".bold.colorize(:red)
+    end 
+end 
 
 def gets
     return STDIN.gets
@@ -33,16 +38,17 @@ def name_receiver(name)
         retry
     end 
 end 
-
+# not working when random game name entered
 def get_game
     puts 'Games: "speed" "free" "bt"'.bold.colorize(:blue)
     puts 'Enter the game name to play!'.bold.colorize(:green)
     input = gets.strip.downcase
     system 'clear'
     help(input)
-    
+
     help_output(input) if input == "help"
     raise NoName if input.empty?
+    # raise NoGame if input.exclude?("free", "bt", "speed")
     puts "Game #{input}".bold.colorize(:blue)
     input
 end 
