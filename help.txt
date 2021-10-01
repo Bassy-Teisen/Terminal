@@ -1,5 +1,9 @@
 Help file
 
+How to install:
+-   Requires ruby bundler, this can be done by entering "gem install bundler" into your terminal.
+How to start
+-   To start the game enter "ruby index.rb" into your turminal.
 Game controls
 -	To exit at anytime enter "exit" into the terminal!
 -	How to enter name: Simply type your "name" at the name prompt!
@@ -10,8 +14,10 @@ Game controls
 -   how to answer a question: Enter your answer as a number! 
 
 
-How to install:
+
 -	What needs to be installed to play: 
 -	U
 -	Error handling
 -	How to get gems
+How to play 
+-   

@@ -1,11 +1,10 @@
 require 'colorize'
 require 'csv'
 require 'smarter_csv'
-require_relative 'name.rb'
+require_relative 'methods.rb'
 require 'tty-font'
 require 'ordinal'
-require 'rspec'
-require 'rouge' # Need to check if i Actually need this
+# require 'rouge' # Need to check if i Actually need this
 require 'test/unit'
 
 
