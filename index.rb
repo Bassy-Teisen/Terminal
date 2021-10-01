@@ -6,11 +6,13 @@ require 'tty-font'
 require 'ordinal'
 require 'rspec'
 require 'rouge' # Need to check if i Actually need this
+require 'test/unit'
+
 
 
 font = TTY::Font.new(:doom)
 system 'clear'
-puts font.write("Qucik Maths", letter_spacing: 1).colorize(:cyan)
+puts font.write("100mm Harry", letter_spacing: 1).colorize(:cyan)
 
 
 exit_app = false
@@ -30,7 +32,8 @@ while exit_app == false
   # Start of free
   if input == 'free'
     numbers.each do |num|
-      num_sample = numbers.sample
+      num = num * 100
+      num_sample = numbers.sample * 100
       print "#{num} + #{num_sample} = "
       correct_answer = num + num_sample
       user_input = gets.chomp
@@ -68,7 +71,8 @@ while exit_app == false
     while current_time < start_time + num_seconds
 
       numbers.each do |num|
-        num_sample = numbers.sample
+        num = num * 100
+        num_sample = numbers.sample * 100
         if count < 6 || count > 10
           print "#{num} + #{num_sample} = "
           correct_answer = num + num_sample
@@ -111,14 +115,15 @@ while exit_app == false
 
     temp_con = []
   numbers.each do |num|
-    temp_con << numbers.sample + numbers.sample
+    num = num * 100
+    temp_con << numbers.sample + numbers.sample * 100
     var_number = 0
     temp_con.each do |num_temp|
       var_number += num_temp
     end
     num_sample = numbers.sample
-    print "#{num} + #{num_sample} + #{var_number} = "
-    num = num + num_sample + var_number
+    print "#{num} + #{num_sample} x #{var_number} = "
+    num = num + num_sample * var_number
     answer = gets.chomp
     ans_int = answer.to_i
     # count += 1
@@ -133,6 +138,7 @@ while exit_app == false
     else
       puts 'wrong'.bold.colorize(:red)
       puts "#{player}'s Reached level: #{right_ans}".bold.colorize(right_ans.positive? ? :blue : :red)
+      temp_con << 0
   # player = player_name
       player_scores[:bt] = { name: player, score: right_ans, game: 'Brain_Teaser' }
       break
@@ -159,7 +165,7 @@ def save_to_csv(filename, data)
     end
   end
 end
-p player_scores[:bt]
+# p player_scores[:bt]
 
 if player_scores[:bt]
   new_data = calculator('brain_teaser.csv', player_scores[:bt])

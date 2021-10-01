@@ -1,0 +1,3 @@
+require 'rspec'
+
+p x

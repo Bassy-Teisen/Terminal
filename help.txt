@@ -1,2 +1,13 @@
-gflnjsfd
-fajkbs
+Help file
+-	To exit at anytime enter exit into the terminal
+-	How to get gems
+-	How to enter name 
+-	How to enter game 
+-	How to start game
+-	How to read score
+-	Hot to replay game
+-	How to install
+-	What needs to be installed to play
+-	User manual
+-	Error handling
+-	
