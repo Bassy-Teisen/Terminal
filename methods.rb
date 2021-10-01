@@ -128,7 +128,6 @@ end
 
 
 if ARGV.include?("--help")
-    p file = File.read('help.txt')
     help_output()
       if ARGV.include?("--bt")
         puts 'Brain Teaser'.bold.colorize(:blue)
@@ -143,5 +142,5 @@ if ARGV.include?("--help")
         p SmarterCSV.process('freeplay.csv')
         exit  
       end
-       
+    gets
 end

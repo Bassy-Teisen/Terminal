@@ -65,7 +65,7 @@ while exit_app == false
 
   elsif input == 'speed'
     count = 0
-    num_seconds = 30
+    num_seconds = 3
     start_time = Time.now.to_i
     current_time = Time.now.to_i
     while current_time < start_time + num_seconds
