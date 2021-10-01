@@ -68,9 +68,9 @@ def help_output
     reply = gets.chomp
     exit if reply == "exit"
     file = File.foreach("help.txt") { |line| puts line } if reply == "--help"
-    p score_bt = SmarterCSV.process('freeplay.csv')  if reply == "score"
-    p score_bt = SmarterCSV.process('speed.csv')  if reply == "score"
-    p score_bt = SmarterCSV.process('brain_teaser.csv')  if reply == "score"
+    puts score_free = SmarterCSV.process('freeplay.csv')  if reply == "score"
+    puts score_speed = SmarterCSV.process('speed.csv')  if reply == "score"
+    puts score_bt = SmarterCSV.process('brain_teaser.csv')  if reply == "score"
 
 end
 
