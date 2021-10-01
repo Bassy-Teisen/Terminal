@@ -65,13 +65,13 @@ while exit_app == false
     exit_app = good_bye()
 
   elsif input == 'speed'
+    count = 0
     num_seconds = 30
     start_time = Time.now.to_i
     current_time = Time.now.to_i
     while current_time < start_time + num_seconds
 
       numbers.each do |num|
-        num = num * 100
         num_sample = numbers.sample * 100
         if count < 6 || count > 10
           print "#{num} + #{num_sample} = "
@@ -80,7 +80,7 @@ while exit_app == false
           print "#{num} - #{num_sample} = "
           correct_answer = num - num_sample
         end
-
+        count += 1
         # getting answer
         user_input = gets.chomp
         system 'clear'

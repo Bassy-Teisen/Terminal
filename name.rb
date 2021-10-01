@@ -16,7 +16,7 @@ def gets
 end
 
 def get_name
-    puts 'Please enter player name!'.bold.colorize(:green)
+    puts 'Please enter player name! or "help" to find game instructions!'.bold.colorize(:green)
     player = gets.strip.upcase
     system 'clear'
     help(player)
@@ -40,7 +40,7 @@ def name_receiver(name)
 end 
 # not working when random game name entered
 def get_game
-    puts 'Games: "speed" "free" "bt" or "help" to find game instructions!'.bold.colorize(:blue)
+    puts 'Games: "speed" "free" "bt"'.bold.colorize(:blue)
     puts 'Enter the game name to play!'.bold.colorize(:green)
     input = gets.strip.downcase
     system 'clear'
@@ -59,13 +59,17 @@ def help(input)
 end
 
 def help_output
+    puts "To continue press enter to continue"
+    puts 'To view insrtuctions --help'
+    puts 'To view score enter "score"'
     puts 'If you wish to exit type: "exit"'
-    puts 'To view score end game'
-    puts 'To view helpfile enter --help'
-    puts "press enter to continue"
     reply = gets.chomp
     exit if reply == "exit"
     file = File.foreach("help.txt") { |line| puts line } if reply == "--help"
+    p score_bt = SmarterCSV.process('freeplay.csv')  if reply == "score"
+    p score_bt = SmarterCSV.process('speed.csv')  if reply == "score"
+    p score_bt = SmarterCSV.process('brain_teaser.csv')  if reply == "score"
+
 end
 
 def play_again(ques_ans)

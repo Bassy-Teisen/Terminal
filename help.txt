@@ -1,13 +1,17 @@
 Help file
--	To exit at anytime enter exit into the terminal
--	How to get gems
--	How to enter name 
--	How to enter game 
--	How to start game
--	How to read score
--	Hot to replay game
--	How to install
--	What needs to be installed to play
--	User manual
+
+Game controls
+-	To exit at anytime enter "exit" into the terminal!
+-	How to enter name: Simply type your "name" at the name prompt!
+-	How to enter game: Simply type the "game name" from the three options at the prompt!
+-	How to start game: Enter your "name" and choose a "game" and press "enter"!
+-	How to read score: The scores will be displayed at the end of every game!
+-	Hot to replay game: Either enter "y" for yes or "n" for no to replay game!
+-   how to answer a question: Enter your answer as a number! 
+
+
+How to install:
+-	What needs to be installed to play: 
+-	U
 -	Error handling
--	
+-	How to get gems
