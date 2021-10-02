@@ -1,3 +1,8 @@
+require_relative 'leader_board.rb'
+require_relative 'name_reciver.rb'
+require_relative 'help.rb'
+require_relative 'game_input.rb'
+
 
 def play_again(ques_ans)
     if ques_ans == 'y'
@@ -35,4 +40,8 @@ def check_answer?(right_answer, input)
       puts 'wrong'.bold.colorize(:red)
       false
     end
+end
+
+def gets
+    return STDIN.gets
 end

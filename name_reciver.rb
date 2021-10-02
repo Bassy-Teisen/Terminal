@@ -1,3 +1,7 @@
+require_relative 'leader_board.rb'
+require_relative 'name_reciver.rb'
+require_relative 'help.rb'
+require_relative 'game_input.rb'
 
 class NoName < StandardError
     def message
@@ -11,9 +15,7 @@ class NoGame < StandardError
     end 
 end 
 
-def gets
-    return STDIN.gets
-end
+
 
 def get_name
     puts 'Please enter player name! or "help" to find game instructions!'.bold.colorize(:green)

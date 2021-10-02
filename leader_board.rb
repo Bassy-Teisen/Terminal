@@ -1,6 +1,31 @@
+require_relative 'leader_board.rb'
+require_relative 'name_reciver.rb'
+require_relative 'help.rb'
+require_relative 'game_input.rb'
 require 'colorize'
+require 'csv'
+require 'smarter_csv'
+require 'tty-font'
 require 'ordinal'
+require 'test/unit'
 
+
+class NoFile < StandardError
+  def message
+    "Sonthing is wrong with uplaoding the leaderboard file"
+  end
+end 
+
+def name_receiver()
+
+  begin
+
+      player = get_name()
+  rescue NoName => e
+      puts e.message
+      retry  
+      end     
+end 
 
 
 
@@ -17,11 +42,8 @@ def print_place(place, player_name, score)
 end
 
 
-
-
-
 if ARGV.include?("--help")
-    help_output()
+      help_output()
       if ARGV.include?("--bt")
         puts 'Brain Teaser'.bold.colorize(:blue)
         p SmarterCSV.process('brain_teaser.csv')
@@ -35,5 +57,6 @@ if ARGV.include?("--help")
         p SmarterCSV.process('freeplay.csv')
         exit  
       end
-    gets
+      puts "Press anykey to continue".bold.colorize(:green)
+      gets
 end

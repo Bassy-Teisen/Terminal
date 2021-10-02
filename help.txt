@@ -30,4 +30,5 @@ Error handling
 -   For any error: You will be reprompted to enter the correct input! 
 -	Also you can type exit at anytime, which will exit the game!
 
+Exit: Press anykey to exit help file!
  

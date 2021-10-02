@@ -109,12 +109,10 @@ while exit_app == false
       end
       current_time = Time.now.to_i
     end
-
     exit_app = good_bye()
   end
 
   next unless input == 'bt'
-
     temp_con = []
   numbers.each do |num|
     num = num * 100
@@ -152,12 +150,22 @@ while exit_app == false
 end
 
 def calculator(filename, new_game)
+  begin
   data = SmarterCSV.process(filename)
   data.push(new_game)
   data = data.sort_by { |hash| hash[:score] }.reverse
   data.pop until data.length < 6
   data
+  rescue 
+    puts "Please check csv files are still in folder".bold.colorize(:red)
+    puts "Press anykey to exit!".bold.colorize(:green)
+    gets
+    exit
+  end
 end
+
+
+
 
 def save_to_csv(filename, data)
   CSV.open(filename, 'w') do |csv|
