@@ -1,10 +1,12 @@
+require_relative 'leader_board.rb'
+require_relative 'name_reciver.rb'
+require_relative 'help.rb'
+require_relative 'game_input.rb'
 require 'colorize'
 require 'csv'
 require 'smarter_csv'
-require_relative 'methods.rb'
 require 'tty-font'
 require 'ordinal'
-# require 'rouge' # Need to check if i Actually need this
 require 'test/unit'
 
 
@@ -15,9 +17,10 @@ puts font.write("100mm Harry", letter_spacing: 1).colorize(:cyan)
 
 
 exit_app = false
-player = name_receiver(get_name) 
+player = name_receiver()
 player_scores = {}
-input = name_receiver(get_game)
+
+input = game_receiver()
 
 while exit_app == false
   count = 0
