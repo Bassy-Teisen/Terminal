@@ -1,7 +1,9 @@
 Help file:
 
 How to install:
--   Requires ruby bundler, this can be done by entering "gem install bundler" into your terminal!
+-   clone from GitHub repository!
+-   Then install ruby bundler, this can be done by entering "gem install bundler" into your terminal!
+- Then the following gems will automatilcally be installed by bundler!
 
 Gems used:
     These gems will be installed automatilcally when bundler is installed!
@@ -11,7 +13,7 @@ Gems used:
 -   The app uses: "smarter_csv", "~> 1.2" 
 
 How to start:
--   To start the game enter "ruby index.rb" into your turminal!
+-   To start the game enter "ruby index.rb" into your terminal!
 
 Game controls:
 -	To exit at anytime enter "exit" into the terminal!
