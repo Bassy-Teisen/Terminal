@@ -40,6 +40,7 @@ while exit_app == false
       correct_answer = num + num_sample
       user_input = gets.chomp
       system 'clear'
+      help(user_input)
       count += 1
       break if user_input == 'exit'
 
@@ -86,7 +87,7 @@ while exit_app == false
         # getting answer
         user_input = gets.chomp
         system 'clear'
-
+        help(user_input)
         # exit if user quits
         break if user_input == 'exit'
 
@@ -125,7 +126,9 @@ while exit_app == false
     print "#{num} + #{num_sample} x #{var_number} = "
     num = num + num_sample * var_number
     answer = gets.chomp
+    help(answer)
     ans_int = answer.to_i
+    
     # count += 1
 
     if answer == 'exit'

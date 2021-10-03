@@ -1,7 +1,7 @@
 require 'test/unit'
 # require_relative '../index'
 # require_relative '../app'
-require_relative '../app'
+# require_relative '../app'
 require_relative '../name_reciver.rb'
 
 

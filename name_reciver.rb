@@ -18,26 +18,26 @@ end
 
 
 def get_name
-    puts 'Please enter player name! or "help" to find game instructions!'.bold.colorize(:green)
+    puts 'To find the games instructions at any point in the game enter: "help"'.bold.colorize(:green)
+    puts "Press any key to continue to the game!".bold.colorize(:red)
+    gets
+    system 'clear'
+    puts 'Please enter player name!' .bold.colorize(:green)
     player = gets.strip.upcase
-    p player
     system 'clear'
     help(player)
     if player.downcase == "exit"
-        puts "Good bye".bold.colorize(:blue)
+        puts "Good Bye".bold.colorize(:blue)
         exit
     end
     raise NoName if player.empty?
-
     puts "Welcome #{player}".bold.colorize(:blue)
     player
 end 
 
 
 def name_receiver()
-
     begin
-
         player = get_name()
     rescue NoName => e
         puts e.message
@@ -53,7 +53,6 @@ def get_game
     input = gets.strip.downcase
     system 'clear'
     help(input)
-    help_output(input) if input == "help"
     raise NoGame if input.empty?
     until input == "bt" or input == "free" or input == "speed"
         puts 'Games: "speed" "free" "bt"'.bold.colorize(:blue)

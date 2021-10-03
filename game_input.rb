@@ -23,6 +23,7 @@ def good_bye()
     puts 'Do you want to play again: y/n?'.bold.colorize(:green)
     input = gets.chomp
     system 'clear'
+    help(input)
     until input == "y" or input == "n"
         puts "Incorrect input please enter 'y' or 'n'".bold.colorize(:green)
         input = gets.chomp
