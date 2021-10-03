@@ -1,0 +1,371 @@
+commit f79935720db8ecf279c15d67b470fd5622b79068
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sun Oct 3 19:43:33 2021 +1000
+
+    Final commit deleted dump file
+
+commit 4130a1d263d96e9419a25e8a58ec4423fcda6b78
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sun Oct 3 19:39:34 2021 +1000
+
+    Final commit
+
+commit 4ab33fc033ee87b6754da3bef102fe8e74561a57
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sun Oct 3 16:33:19 2021 +1000
+
+    Added commenting to make the code more readable
+
+commit 0da8bb57efd58bdf1ec12eddf627af5758e526a2
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sun Oct 3 11:09:29 2021 +1000
+
+    Added more information about the help function access
+
+commit fcdf399ca3d359c2a3a1f891d99ef4d59a6eb6f9
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Oct 2 17:58:43 2021 +1000
+
+    Completed tests of check_answer and play_again
+
+commit 1c6701f839541e84715874dd6c2b9b0bf386501b
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Oct 2 16:02:42 2021 +1000
+
+    Added error handiling to help function
+
+commit 2debd88886b11c592ce3c7507977f30d363acbb7
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Oct 2 14:55:35 2021 +1000
+
+    Cleaned up files a little
+
+commit 899993ba64ff870b1cc3657703ae32e1bd3de5b2
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Oct 2 14:53:53 2021 +1000
+
+    Fixed error handling for get_name and get_game
+
+commit 28127b9f3ee283108493bdf4cbc8f61d85dc1590
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Oct 1 22:51:05 2021 +1000
+
+    Help file gems added
+
+commit 35f780f89e0dab854e555d49fa8ff979c66ac6b3
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Oct 1 19:14:10 2021 +1000
+
+    Added help file
+
+commit 4e4cde44bb5bb9067e90f9f3690b68be021a2ac3
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Oct 1 17:47:01 2021 +1000
+
+    Adding a gem file
+
+commit b44ce7172f6b5e326de113af3d060afef6c8e586
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Oct 1 15:40:07 2021 +1000
+
+    Error handiling
+
+commit 47f980002e14820fd36e00c4554a166def1799db
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Oct 1 11:29:51 2021 +1000
+
+    Changed to 100mm Harry
+
+commit 188aebc58567cb0158759f29272c5417140bfc7f
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Thu Sep 30 16:12:27 2021 +1000
+
+    Working fine still to add help txt
+
+commit 0a96773ed11c1856f6a1bda517ee75f006522d47
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Thu Sep 30 11:38:55 2021 +1000
+
+    Everything Working Fine but not finished
+
+commit 014278a7ed0f95f2b655a21091e54cdb66a34a52
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Thu Sep 30 10:50:33 2021 +1000
+
+    Altered the get_name and get_game into name_reciever
+
+commit fbbc70d61a85fe99a0e6fc5b374c5ac0ed0b2efd
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 21:59:00 2021 +1000
+
+    Adding Ordinal and tty-font
+
+commit 0e84ba2ea0e8f4d75a8662eaca3996d3ab8ab33e
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 21:15:52 2021 +1000
+
+    All working still needs refactoring
+
+commit 5e3ea39b6264e9a9fbb2cfdf8ae586f9dcb8c20b
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 20:49:30 2021 +1000
+
+    Attempting to fix upload issue
+
+commit e8d64f12032675c5397974ed8009aa0fadae3aad
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 16:42:56 2021 +1000
+
+    Messed around with refractoring and ARGV
+
+commit 9c2363b49b7d4d64bcb0283e047265a9fdbefb89
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 14:55:43 2021 +1000
+
+    App is working properly
+
+commit 2802ca4626ff3f5d3ab1a98f1a533a72dc5943a7
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 14:21:18 2021 +1000
+
+    App working needs refignment
+
+commit 812febd1cc10915f4c444b370c78df7c59ae1046
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 14:07:51 2021 +1000
+
+    Altered the exit option for name
+
+commit 8ae078959609e810e6c09ac8b244e68dad0e483a
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 13:46:44 2021 +1000
+
+    Game prompt working
+
+commit 9eea1a98c6a40669311685b8797dd3f6f454a85f
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 12:52:36 2021 +1000
+
+    Changed Name wording
+
+commit 547b8afeb6338a37b39904233542f347ed29bc0a
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 12:33:04 2021 +1000
+
+    Created a method for name error
+
+commit 469776a0bdca12b4f308748d2a3843b8cfafe4db
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 11:57:19 2021 +1000
+
+    Creating error functions
+
+commit 0edde6a55f74d86e0a2da92235df9316528b586a
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Wed Sep 29 09:57:34 2021 +1000
+
+    Starting to create an error handler
+
+commit 239a57895a8ef908dfcea188dde1147d4d4fa227
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 22:01:03 2021 +1000
+
+    Final commit Tuesday night
+
+commit 90f59b044f33ae088ea85656e48ed734c2808679
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 21:46:16 2021 +1000
+
+    Attched leader board to index page
+
+commit 4a73580c161fb579e9ed3512accbb059ff407ee8
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 20:26:19 2021 +1000
+
+    Changed Leader board and Good bye method
+
+commit 2dc691b8c811b5773eab38e8da57376327adc0f2
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 16:27:49 2021 +1000
+
+    Sorted Leaderbord Still needs a bit more
+
+commit 9538cd37c662f0ee5b24b6dca609d7ac9c51b575
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 15:09:19 2021 +1000
+
+    Refinished largest score finder
+
+commit f1f8a53f73b37a01520b52d706ccb9e1d523bc46
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 14:19:48 2021 +1000
+
+    Finished largest score finder
+
+commit 47efe5d5fa6be0a97db58b7adfbf929d6391efdb
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 14:08:42 2021 +1000
+
+    Creating leaderbord checker
+
+commit 7ce7f00032acc6a514e4f8bea5f6d111cdd893b2
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 13:27:22 2021 +1000
+
+    Using csv to creat leader board file
+
+commit 3471004c485c32cd8e62e28859d1dfaecdaaddae
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 12:36:14 2021 +1000
+
+    Created total score method
+
+commit 2035687b789aea759d84ee2e02fe1612e14e7033
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 11:39:15 2021 +1000
+
+    Changing all colorize
+
+commit a42fc85e54d12ebe55f7e0c56e424acb5d2eb80e
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 11:25:09 2021 +1000
+
+    Created a good bye message
+
+commit 0daee839af52442df83186967d29bc5dea2b2a75
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 10:56:12 2021 +1000
+
+    Changed prompt messsages to green
+
+commit 97c47e1d736a3078e53a782e081f525574010b15
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 10:35:22 2021 +1000
+
+    Replay game y/n working
+
+commit 1dff9a78dc6000af0009a7d600d167c6a16c064d
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Tue Sep 28 10:31:40 2021 +1000
+
+    Fixing the replay y/n option
+
+commit d8f1dfef6c22088507e6082409277d8c9273df2c
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 21:52:07 2021 +1000
+
+    Final commit monday
+
+commit 08dc148ce459465943647a523029c1f657900559
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 20:48:27 2021 +1000
+
+    Added third game all going well
+
+commit 40ea759c207205d7af1a625c78486d637a069aad
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 20:22:39 2021 +1000
+
+    Changed replay prompt and added 'system.clear'
+
+commit 19e232693364101ea1ab953e20297af3b01ef26d
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 20:00:12 2021 +1000
+
+    Changing speed raplay game prompt
+
+commit a5435da0234b5e8fc7122c387b373368de3aba1c
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 18:39:44 2021 +1000
+
+    Altering the time game
+
+commit 6b225cdad381fdad21707c80f2a07759c79a9b8b
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 13:26:35 2021 +1000
+
+    Creating a retry option
+
+commit add01a2c1d8de2c6564a143abfc6e3a14bef95ce
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Mon Sep 27 12:10:46 2021 +1000
+
+    Restart app
+
+commit 3e2a32903f085131d6cd552c1d12ade6e0b752d5
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sun Sep 26 21:45:37 2021 +1000
+
+    Colorize added
+
+commit 611deedcd774104cfc14c1e58ffcd5d1de39e7ed
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Sep 25 09:06:15 2021 +1000
+
+    Json file now inputing value
+
+commit 6e3d32c7c50b81c23b3c034aee2fdcdc0e085834
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Sep 25 05:46:07 2021 +1000
+
+    Unable to change txt file to usable data
+
+commit 655d902b191c49bbae20f7cfef3217ebbec248bf
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Sep 25 05:32:48 2021 +1000
+
+    Trouble with converting txt file into usable data
+
+commit 3729e2a71b39b0a281848b3575295af05d26d88b
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Sep 25 04:01:50 2021 +1000
+
+    File auto updates and csv auto fills
+
+commit 47383ca79046402f17eba9e4ee03728fb8e1fa15
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Sat Sep 25 03:31:08 2021 +1000
+
+    trying file systems
+
+commit 9b1cbd97821259de15e3195fc9be599a18e9465b
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Sep 24 21:10:35 2021 +1000
+
+    Leaderboard returns values in correct order
+
+commit c18ae75598a9d22091fb0f5ffb45675786ee7b1d
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Sep 24 20:07:16 2021 +1000
+
+    Working Leader Board
+
+commit 9ab83597990c2605390c68992213f52f33281252
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Sep 24 15:23:10 2021 +1000
+
+    Made the subclass GameTally
+
+commit d2c7de6da43af137db6636267e1c05203522a1ba
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Sep 24 10:55:55 2021 +1000
+
+    created a sort method for values
+
+commit 99e353418339c6a1ce8b2316f19dc00187ea132c
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Fri Sep 24 10:06:56 2021 +1000
+
+    Trying to crate class for Leaderboard
+
+commit cdc4fc30ed5edbb30f351d42fe964e25961a8d52
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Thu Sep 23 20:17:19 2021 +1000
+
+    Trying out different ways to create a Leaderboard
+
+commit 28d61409e811ba199e90c2d59a587c1fdfc629ca
+Author: Bassy_Teisen <cab022111@coderacademy.edu.au>
+Date:   Thu Sep 23 12:14:26 2021 +1000
+
+    Initial commit
